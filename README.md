@@ -10,15 +10,15 @@ As stated, the image is built with the expectation that it will be the basis for
 
 ### `install-python.sh`
 
-`install-python.sh` is used to configure a specific version of Python. The intent is that a new image would be created from the resulting execution of this script. For example, the Dockerfile example below will build an image with Python 3.7.4 installed and the default Python installation set for the built-in user `alpine`.
+`install-python.sh` is used to configure a specific version of Python. The intent is that a new image would be created from the resulting execution of this script. For example, the Dockerfile example below will build an image with Python 3.8.5 installed and the default Python installation set for the built-in user `alpine`.
 
 ```Dockerfile
 FROM relenteny/pyenv:1.2.14
 
-RUN /home/alpine/bin/install-python.sh 3.7.4
+RUN /home/alpine/bin/install-python.sh 3.8.5
 ```
 
-Typically, although not required, the resultant image would be stored in the registry as a generic Python runtime image. Using the example above, an example image name and tagged could be `myregistry/python:3.7.4`.
+Typically, although not required, the resultant image would be stored in the registry as a generic Python runtime image. Using the example above, an example image name and tagged could be `myregistry/python:3.8.5`.
 
 ### `install-requirements.sh`
 
@@ -31,7 +31,7 @@ Typically, although not required, the resultant image would be stored in the reg
 Here `requirements.txt` is specified as being in the home directory of the built in user, `alpine`. This, of course, is dependent on how the actual Dockerfile is written. An example of its usage is below.
 
 ```Dockerfile
-FROM myregistry/python:3.7.4
+FROM myregistry/python:3.8.5
 .
 .
 .

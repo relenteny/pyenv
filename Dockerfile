@@ -21,15 +21,15 @@
 #
 #################################################################################################################################
 #
-# Image path: relenteny/pyenv:1.2.14
+# Image path: relenteny/pyenv:1.2.20
 #
 #################################################################################################################################
 
-FROM relenteny/alpine:3.10.2
+FROM relenteny/alpine:3.12.0
 
 LABEL relenteny.repository.url=https://github.com/relenteny/pyenv
-LABEL relenteny.repository.tag=1.2.14
-LABEL relenteny.pyenv.version=1.2.14
+LABEL relenteny.repository.tag=1.2.20
+LABEL relenteny.pyenv.version=1.2.20
 LABEL relenteny.pyenv.virtualenv.version=1.1.5
 
 COPY build /opt/build
@@ -49,8 +49,8 @@ RUN set -x && \
     cd /home/alpine && \
     git clone https://github.com/pyenv/pyenv.git /home/alpine/.pyenv && \
     cd /home/alpine/.pyenv && \
-    git branch pyenv-1.2.14 v1.2.14 && \
-    git checkout pyenv-1.2.14 && \
+    git branch pyenv-1.2.20 v1.2.20 && \
+    git checkout pyenv-1.2.20 && \
     cd /home/alpine && \
     git clone https://github.com/pyenv/pyenv-virtualenv.git /home/alpine/.pyenv/plugins/pyenv-virtualenv && \
     cd /home/alpine/.pyenv/plugins/pyenv-virtualenv && \
